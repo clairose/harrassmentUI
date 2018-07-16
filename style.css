@@ -1,0 +1,453 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+    font-family: 'Rubik', arial, sans-serif;
+}
+
+/* Divs */
+
+.definition {
+    position: relative;
+    top: 15%;
+    display: flex;
+    width: 100vw;
+    height: 500px;
+    background: url(images/star-bg.png);
+    z-index: 0;
+}
+.definition:after {
+    position: absolute;
+    top: -15%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    transform: skewY(-3deg);
+    transform-origin: 100%;
+    z-index: -1;
+}
+.types {
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    text-align: center;
+    background-color: #2b3c5b;
+    z-index: 1;
+}
+.types:after {
+    position: absolute;
+    top: -12%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 50%;
+    content: '';
+    background: inherit;
+    transform: skewY(-2deg);
+    transform-origin: 100%;
+    z-index: -1;
+}
+.types-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 85px;
+    text-align: left;
+}
+.floor {
+    position: relative;
+    width: 100vw;
+    height: 150px;
+    background-color: #7b7b7b;
+    z-index: -1;
+}
+.floor:after {
+    position: absolute;
+    display: block;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    content: '';
+    background: inherit;
+    transform: skewY(1deg);
+    transform-origin: 100%;
+    z-index: 0;
+}
+.bullying {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100vw;
+    height: 350px;
+    background-color: #cecece;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.bullying-child {
+    position: absolute;
+    top: 5%;
+    right: 45%;
+    width: 250px;
+}
+.bullying-wrapper{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 0px;
+    background: white;
+}
+
+.bullying-wrapper::after {
+    position: absolute;
+    bottom: -10%;
+    width: 100vw;
+    height: 90px;
+    content: '';
+    background: inherit;
+    transform: skewY(-4deg);
+    transform-origin: 100%;
+    background: white;
+}
+
+.changeable-text {
+    align-self: center;
+    width: 25%;
+    margin-left: 15px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.added-text {
+    padding: 10px;
+}
+
+.draggables {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Text */
+
+h1{
+    margin: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+}
+h2 {
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #48423e;
+}
+h4{
+    margin: 0;
+    color: #9bc1d7;
+}
+p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: white;
+}
+
+.bully-text {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #48423e;
+}
+em {
+    font-style: normal;
+    color: #bc5228;
+}
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+li {
+    padding-left: 1rem;
+    text-indent: -1rem;
+    margin-bottom: 5px;
+}
+li:before {
+    content: ">>";
+    padding-right: 4px;
+    color: #bc5228;
+}
+
+/* Images */
+
+.harrassment-woman {
+    position: absolute;
+    right: 30%;
+    bottom: 15%;
+    width: 65%;
+    max-width: 700px;
+    z-index: 1;
+}
+.harrassment-man {
+    position: absolute;
+    left: 65%;
+    bottom: 15%;
+    width: 25%;
+    max-width: 250px;
+}
+.draggable-woman, .draggable-man {
+    width: 30%;
+}
+
+.quid {
+    margin-top: 20px;
+    width: 20%;
+    max-width: 190px;
+}
+.hostile {
+    align-self: flex-start;
+    margin-top: 20px;
+    width: 25%;
+    max-width: 240px;
+}
+.bullies {
+    position: absolute;
+    left: 5%;
+    top: 17%;
+    width: 20%;
+    max-width: 200px;
+}
+.victim {
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    width: 15%;
+    max-width: 150px;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1px) and (max-width: 600px) {
+    .definition {
+        height: 62%;
+    }
+    .harrassment-woman {
+        bottom: 25%;
+        width: 80%;
+        left: 5%;
+    }
+    .harrassment-man {
+        bottom: 55%;
+        transform: rotate(302deg);
+        width: 27%;
+        left: auto;
+        right: 0%;
+    }
+    .types-child{
+        margin-top: 14%;
+    }
+    .added-text {
+        padding: 10px 10px 0px 10px;
+    }
+    .changeable-text {
+        margin: auto;
+        display: inline-block;
+        position: absolute;
+        right: 50%;
+        width: 40%;
+        top: 43%;
+        transform: translateX(50%);
+    }
+    .types{
+        height: 65%;
+    }
+    .quid {
+        margin-top: 10px;
+        width: 22%;
+        position: absolute;
+        top: 77%;
+        left: 5%;
+        display: block;
+    }
+    .hostile {
+        margin: 0;
+        width: 27%;
+        display: block;
+        position: absolute;
+        top: 77%;
+        right: 5%;
+    }
+    .floor{
+        height: 120px;
+    }
+    p{
+        font-size: 0.7rem;
+    }
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 0.9rem;
+    }
+    .bully-text {
+        color: #48423e;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+    .draggable-man, .draggable-woman {
+        width: 18%
+    }
+    .bullies {
+        width: 22%;
+        max-width: 200px;
+        min-width: 75px;
+        position: absolute;
+        left: 5%;
+        top: 62%;
+    }
+    .victim {
+        width: 15%;
+        max-width: 150px;
+        min-width: 50px;
+        position: absolute;
+        right: 7%;
+        top: 60%;
+    }
+    .bullying-child {
+        width: 80%;
+        position: absolute;
+        right: auto;
+        top: 5%;
+    }
+    .bullying{
+        height: 365px;
+    }
+    .bullying-wrapper::after{
+        height: 50px;
+    }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 715px) {
+    .definition {
+        height: 450px;
+    }
+    .harrassment-woman{
+        bottom: 20%;
+        width: 67%;
+    }
+    .harrassment-man{
+        bottom: 20%;
+        width: 27%;
+    }
+    .types-child{
+        margin-top: 14%;
+    }
+    .added-text {
+        padding: 10px 10px 0px 10px;
+    }
+    .changeable-text {
+        margin-top: 3%;
+        align-self: flex-start;
+    }
+    .types{
+        height: 53%;
+    }
+    .quid {
+        margin-top: 10px;
+        width: 22%;
+    }
+    .hostile{
+        margin: 0;
+        width: 27%;
+    }
+    .floor{
+        height: 120px;
+    }
+    p{
+        font-size: 0.7rem;
+    }
+    .draggable-man, .draggable-woman {
+        width: 25%
+    }
+    .bullying-wrapper::after{
+        height: 50px;
+    }
+    .bullies {
+        top: 47%;
+    }
+    .victim {
+        top: 40%;
+    }
+    .bullying-child {
+        right: 35%;
+    }
+  }
+
+  @media screen and (min-width: 716px) and (max-width: 850px) {
+    .definition {
+        height: 470px;
+    }
+    .harrassment-woman{
+        bottom: 20%;
+        width: 67%;
+    }
+    .harrassment-man{
+        bottom: 20%;
+        width: 27%;
+    }
+    .draggable-man, .draggable-woman {
+        width: 25%
+    }
+    p{
+        font-size: 0.7rem;
+    }
+    .floor{
+        height: 120px;
+    }
+    .types{
+        height: 55%;
+    }
+    .types-child{
+        margin-top: 10%;
+    }
+    .hostile{
+        margin: 0;
+        width: 27%;
+    }
+    .quid {
+        margin-top: 10px;
+        width: 22%;
+    }
+    .added-text {
+        padding: 10px 10px 0px 10px;
+    }
+    .changeable-text {
+        margin-top: 5%;
+        align-self: flex-start;
+    }
+    .bullies {
+        top: 33%;
+    }
+    .victim {
+        top: 27%;
+    }
+    .bullying-child {
+        right: 40%;
+    }
+    .bullying-wrapper::after{
+        height: 60px;
+    }
+  }
